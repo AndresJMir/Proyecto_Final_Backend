@@ -8,10 +8,18 @@ Instalacion de dependencias del proyecto:
 
     ./composer/laravel install
 
+Vamos a la carpeta de laravel
+
+    cd laravel
+
 Preparar el .env
 
     cp .env.example .env
     nano .env
+
+Si la base de datos es un sqlite:
+_En caso de no usar sqlite, poner los datos de conexion en el .env_
+    touch database/database.sqlite
 
 Generacion de llaves:
 
@@ -25,6 +33,7 @@ Migracion y seeders:
 
     php artisan migrate:fresh
     php artisan db:seed
+**O hazlo con un comnado:** _php artisan migrate:fresh --seed_
 
 **Recuerda** configurar el modo de desarrollo en .env
 
