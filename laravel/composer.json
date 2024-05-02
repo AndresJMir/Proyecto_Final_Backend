@@ -7,7 +7,16 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9"
+    },
+    "comments": {
+        "note": "OBLIGAR A INSTALAR ESTA MIERDA CON: ../../composer require laravel/sanctum",
+        "note 2": "pa ver la mierda instalao es CON: ../../composer show laravel/sanctum",
+        "note 3": "instala CON: ../../composer install",
+        "note 4": "Laravel 11 no hace las cosas si no le pones una pistola!",
+        "note 5": "el comnado para obligar a crear la migracion..., mira el readme que la sintaxis del JSON da por el sun",
+        "note 6": "Soy una nota;)"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
