@@ -1,0 +1,303 @@
+{
+    "info": {
+      "_postman_id": "collection-1",
+      "name": "Laravel API Collection",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get Charging Points",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Create Charging Point",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"name\":\"New Charging Point\",\"description\":\"This is a new charging point\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Charging Point",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:id",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update Charging Point",
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"name\":\"Updated Charging Point\",\"description\":\"This is an updated charging point\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:id",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Delete Charging Point",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:id",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Ratings",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:charging_point_id/ratings",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "charging_point_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Create Rating",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"rating\":4,\"comment\":\"This is a new rating\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:charging_point_id/ratings",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "charging_point_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Rating",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:charging_point_id/ratings/:rating_id",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "charging_point_id",
+                "value": "1"
+              },
+              {
+                "key": "rating_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update Rating",
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"rating\":5,\"comment\":\"This is an updated rating\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:charging_point_id/ratings/:rating_id",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "charging_point_id",
+                "value": "1"
+              },
+              {
+                "key": "rating_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Delete Rating",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/charging-points/:charging_point_id/ratings/:rating_id",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ],
+            "path": [
+              {
+                "key": "charging_point_id",
+                "value": "1"
+              },
+              {
+                "key": "rating_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Login",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"email\":\"user@example.com\",\"password\":\"password\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/login",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Logout",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/logout",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Register",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"name\":\"New User\",\"email\":\"newuser@example.com\",\"password\":\"password\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/register",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get User",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/user",
+            "protocol": "http",
+            "host": [
+              "localhost:8000"
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+  }

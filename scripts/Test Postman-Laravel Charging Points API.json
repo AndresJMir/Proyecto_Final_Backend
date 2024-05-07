@@ -1,0 +1,80 @@
+{
+    "info": {
+        "name": "Laravel Charging Points API",
+        "description": "Colección de Postman para probar la API de puntos de carga de Laravel",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Obtener todos los puntos de carga",
+            "request": {
+                "url": "http://localhost:8000/api/charging-points",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "Crear un nuevo punto de carga",
+            "request": {
+                "url": "http://localhost:8000/api/charging-points",
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": {
+                        "name": "Punto de Carga 1",
+                        "address": "Calle Falsa 123",
+                        "latitude": 40.712776,
+                        "longitude": -74.005974,
+                        "type": "coche",
+                        "power": 220,
+                        "created_by": 1
+                    }
+                }
+            }
+        },
+        {
+            "name": "Obtener un punto de carga específico",
+            "request": {
+                "url": "http://localhost:8000/api/charging-points/{{id}}",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "Actualizar un punto de carga",
+            "request": {
+                "url": "http://localhost:8000/api/charging-points/{{id}}",
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": {
+                        "name": "Punto de Carga Actualizado",
+                        "address": "Calle Nueva 456",
+                        "latitude": 40.722222,
+                        "longitude": -74.011111,
+                        "type": "moto",
+                        "power": 110,
+                        "created_by": 1
+                    }
+                }
+            }
+        },
+        {
+            "name": "Eliminar un punto de carga",
+            "request": {
+                "url": "http://localhost:8000/api/charging-points/{{id}}",
+                "method": "DELETE"
+            }
+        }
+    ]
+}
