@@ -17,12 +17,19 @@ class TokenController extends Controller
 {
     public function user(Request $request)
     {
-        $user = User::where('email', $request->user()->email)->first();
+        $user = Auth::user();
+
+        if (!$user) {
+            return response()->json([
+                "success" => false,
+                "message" => "Unauthorized"
+            ], 401);
+        }
 
         return response()->json([
             "success" => true,
             "user"    => new UserResource($user),
-            "roles"   => [ $user->role->name ],
+            "roles"   => [$user->role->name],
         ]);
     }
 
@@ -53,9 +60,7 @@ class TokenController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Get user
-            $user = User::where([
-                ["email", "=", $credentials["email"]]
-            ])->firstOrFail();
+            $user = Auth::user();
             // Revoke all old tokens
             $user->tokens()->delete();
             // Generate new token
@@ -71,11 +76,11 @@ class TokenController extends Controller
     public function logout(Request $request)
     {
         // Revoke token used to authenticate current request...
-        $request->user()->currentAccessToken()->delete();
+        $request->user()->tokens()->delete();
 
         return response()->json([
             "success" => true,
-            "message" => "Current token revoked",
+            "message" => "Tokens revoked",
         ]);
     }
 
